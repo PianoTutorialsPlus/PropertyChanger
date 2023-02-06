@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81A71FA3-8517-4963-8117-D43C0461062B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PropertyChanger.Presenter</RootNamespace>
+    <AssemblyName>PropertyChanger.Presenter</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyChangerPresenter.cs" />
+    <Compile Include="RootComposition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PropertyChanger.DataAccess\PropertyChanger.DataAccess.csproj">
+      <Project>{9c08f5f4-b928-4295-9261-33de8dcf2e97}</Project>
+      <Name>PropertyChanger.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PropertyChanger.Model\PropertyChanger.Model.csproj">
+      <Project>{6ec026f6-08ef-40ae-9825-b3001699b4ca}</Project>
+      <Name>PropertyChanger.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PropertyChanger.Services\PropertyChanger.Services.csproj">
+      <Project>{8c306e7d-90ba-4aaf-909b-d8765ce2af4e}</Project>
+      <Name>PropertyChanger.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PropertyChanger\PropertyChanger.View.csproj">
+      <Project>{3CB989F1-42F9-41F4-BFDD-2F8617C4F22A}</Project>
+      <Name>PropertyChanger.View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
